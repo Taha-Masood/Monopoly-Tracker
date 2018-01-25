@@ -4,7 +4,7 @@ Monopoly tracker uses statistical analysis of all player's within a game of mono
 
 ### Current Status
 
-- Backend components are near completion, with trade functionality remaining.
+- Backend components are near completion, with trade function implementation remaining.
 - Qt application includes three input methods and distinctively displays move rating using a progress bar.
 - Backend components require edge-case testing, and confirmation of correct inputs to make the application more user-friendly.
 - Currently, the file is adapted to function utilizing standard input/output to allow for faster debugging.
