@@ -1,3 +1,15 @@
+/*
+ * Author: Taha Masood
+ * Name: Monopoly_Tracker
+ * Monopoly tracker uses statistical analysis of all player's
+ * within a game of monopoly to determine the optimal next move
+ * for a player. Produced in C++ utilizing the QT application
+ * framework for the graphical user interface. Graphically displays
+ * board settings for user interactions, and considers all possible moves
+ * for the current player, including, property purchase, trade offers, building,
+ * chance/community-chest, placement and financial standing of opposing players'.
+ */ 
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -988,6 +1000,7 @@ cout << "You must now enter in the number of properties that each player current
             cout << "Please enter in the number of properties " << transfer_name << " currently has:" << endl << endl;
             cin >> transfer_number;
             cout << endl << endl;
+            invalid_entry = 0;
 
               for (int i = 0; i < transfer_number; i++)
                 {
@@ -998,12 +1011,12 @@ cout << "You must now enter in the number of properties that each player current
                   }
 
                   cout << "Please enter in the location of the number " << (i + 1) << " property that " << transfer_name << " has: " << endl << endl;
-                  cin >> transfer_number;
+                  cin >> determine;
                   cout << endl << endl;
 
-                  if ((transfer_number > 0) && (transfer_number < 41) && (owned.layout[(transfer_number - 1)] == 0) && (prices.layout != 0))
+                  if ((determine > 0) && (determine < 41) && (owned.layout[(determine - 1)] == 0) && (prices.layout != 0))
                     {
-                      owned.layout[(transfer_number - 1)] = (t + 1);
+                      owned.layout[(determine - 1)] = (t + 1);
                       cout << "Thanks! " << endl << endl;
                     }
 
@@ -1054,20 +1067,20 @@ while (true)
                         if (determine_print == 1)
                         {
                           print_board(current.layout);
-                          break_loop == 1;
+                          break_loop = 1;
                         }
 
                         else if (determine_print == 2)
                         {
                           print_board (owned.layout);
-                          break_loop == 1;
+                          break_loop = 1;
                         }
 
                         else if (determine_print == 3)
                         {
                           transfer_number = player_number(current_player);
                           print_board(owned.layout);
-                          break_loop == 1;
+                          break_loop = 1;
                         }
 
                         else
